@@ -1,0 +1,58 @@
+@import '../../../styles/variables';
+
+.Navigation {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  width: 100%;
+  height: $navbar-height;
+  background-color: $nav-background-color;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  transition: transform 500ms ease-out;
+  
+  @media only screen and (max-width: 50em) {
+    grid-template-rows: repeat(2, 1fr);
+    height: 15rem;
+  }
+  
+  &__Searchbar {
+    justify-self: center;
+    width: 100%;
+
+    @media only screen and (max-width: 50em) {
+      grid-row: 2 / 3;
+      grid-column: 1 / -1;
+      width: 80%;
+    }
+  }
+  
+  &__NavItems {
+    justify-self: end;
+    margin: 0 1rem;
+
+    @media only screen and (max-width: 50em) {
+      display: none;
+    }
+  }
+
+  &__Logo {
+    display: block;
+    margin: 0 1rem 0 3rem;
+    justify-self: start;
+    width: 10rem;
+    margin-right: auto;
+    cursor: pointer;
+    
+    @media only screen and (max-width: 50em) {
+      grid-row: 1 / 2;
+      grid-column: 1 / -1;
+      margin-right: 0;
+      margin-top: 1rem;
+      width: 13rem;
+      justify-self: center;
+    }
+  }
+}

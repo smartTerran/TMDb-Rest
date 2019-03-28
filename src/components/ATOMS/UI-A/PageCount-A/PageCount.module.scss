@@ -1,0 +1,52 @@
+@import '../../../../styles/variables';
+
+.PageCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  padding: .5rem 2rem;
+  filter: drop-shadow(-.6rem .8rem 0.3rem rgba(0, 0, 0, 1));
+
+  &::before, 
+  &::after {
+    display: block;
+    content: '';
+    border: 0;
+    height: 1.15px;
+    width: 100%; 
+  }
+  
+  &::before {
+    margin-right: 3rem;
+    background-image: linear-gradient(to left, #fff, $primary-gray, $primary-dark-gray, transparent);
+  }
+  
+  &::after {
+    margin-left: 3rem;
+    background-image: linear-gradient(to right, #fff, $primary-gray, $primary-dark-gray, transparent);
+  }
+
+  &_Discover {
+    color: $filter-font-color;
+    margin: 3rem auto;
+    width: 100%;
+  }
+  
+  &_Main {
+    color: $filter-font-color;
+    margin: 3rem auto;
+    width: 100%;
+  }
+
+  &__Mid {
+    display: inline-block;
+    font-size: 2.9rem;
+    margin: 0 2rem;
+  }
+
+  &__Side {
+    display: inline-block;
+    font-size: 2rem;
+  }
+}

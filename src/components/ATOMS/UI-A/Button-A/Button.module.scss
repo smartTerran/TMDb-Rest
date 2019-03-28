@@ -1,0 +1,59 @@
+@import '../../../../styles/variables';
+
+.Button {
+  position: relative;
+  display: block;
+  font-size: $normal-font-size;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $filter-font-color;
+  background-color: transparent;
+  overflow: hidden;
+  letter-spacing: .08rem;
+  border: none;
+  outline: none;
+  backface-visibility: hidden;
+  cursor: pointer;
+
+  &__Text {
+    position: relative;
+    z-index: 5;
+  }
+
+  &__Login,
+  &__Logout {
+    margin: 2rem 0;
+    border: 2px solid $primary-pink;
+    border-radius: 10rem;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 150%;
+      height: 0;
+      background: $primary-purple-light;
+      opacity: .5;
+      transform: translate(-50%, -50%);
+      transition: all 500ms ease;
+    }
+    
+    &:hover::after {
+      height: 140%;
+      opacity: .75;
+    }
+  }
+  
+  &__Login {
+    padding: 1.5rem 3rem;
+    font-size: 1.9rem;    
+  } 
+  
+  &__Logout {
+    padding: 1.5rem 3rem;
+    background-color: rgba($primary-purple, .4);
+    font-size: 1.6rem;
+  }
+}

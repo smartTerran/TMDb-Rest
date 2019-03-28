@@ -1,0 +1,67 @@
+.Image {  
+  &, 
+  &__NA,
+  &__Country {
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    box-shadow: -1rem 1.5rem 3rem rgba(0, 0, 0, .5);
+  }
+
+  &, 
+  &__NA {
+    object-position: 0 .1rem;
+    backface-visibility: hidden;
+    transition: all 200ms ease-out;
+    filter: blur(.1px); 
+  }
+
+  &__NA,
+  &__Country {
+    object-position: 50% 50%;
+    height: 100%;
+    background-color: #888;
+  }
+
+  &__Info {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    width: 5rem;
+    height: 5rem;
+    transition: all 250ms ease-out;
+    clip-path: circle(50%);
+    background-color: #fff;
+  }
+
+  &__Wrapper,
+  &__WrapperCountry {
+    position: relative;
+    height: 25rem;
+    width: inherit;
+    overflow: hidden;
+    border-radius: 2rem;
+  }
+  
+  &__Wrapper {  
+    cursor: pointer;
+    
+    &:hover {
+      .Image,
+      .Image__NA {
+        filter: blur(.3rem);
+        transform: scale(1.05) translateY(.8rem);
+
+        &__Info {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

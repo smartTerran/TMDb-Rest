@@ -1,0 +1,76 @@
+@import '../../styles/variables';
+
+.Profile {
+  position: relative;
+  display: grid;
+  grid-template-columns: [side-panel-start] minmax(min-content, 22%) [side-panel-end list-start] repeat(4, 1fr) [list-end];
+  width: 100%;
+  height: 100%;
+
+  @media only screen and (max-width: 50em) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__SidePanel {
+    grid-row: 1 / -1;
+    grid-column: [side-panel-start] / [side-panel-end];
+  }
+
+  &__Highlights {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $primary-navy;
+    padding: 5rem 0;
+
+    @media only screen and (max-width: 31.25em) {
+      flex-direction: column;
+
+      & > * {
+        width: 50%;
+
+        @media only screen and (max-width: 26.25em) {
+          width: 90%;
+        }
+
+        & > * {
+          &:first-child {
+            margin-left: auto;
+          }
+          
+          &:last-child {
+            margin-right: auto;
+          }
+        }
+
+        &:first-child {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+
+  &__Carousel {
+    width: 70%;
+    height: 100%;
+    margin: 5rem auto 15rem;
+    
+    & > *:first-child {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__Lists {
+    grid-row: 1 / -1;
+    grid-column: 2 / -1;
+  }
+
+  &__NotAvailable {
+    display: block;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10rem 0;
+  }
+}

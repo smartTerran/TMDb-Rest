@@ -1,0 +1,36 @@
+$max-width: 120rem;
+$large-border-radius: 10rem;
+$normal-font-size: 1.6rem;
+
+$navbar-height: 8rem;
+
+$filmList-padding-side: 0;
+$filmList-padding-vert: 1rem;
+
+$filter-border-radius: 2rem;
+$filter-border-radius-top-side: 1rem;
+$filter-padding: .75rem 2rem;
+$filter-box-shadow: 0 1rem 2rem rgba(0,0,0,.5);
+
+$filter-dropdown-height: 18rem;
+$filter-font-color: #ccc;
+
+$filter-scrollbar-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+$filter-scrollbar-bg-color: #ccc;
+
+$layout-min-height: calc(100vh - 8rem);
+$filmList-min-height: calc(50vh);
+
+$layout-main-gradient: linear-gradient(316deg, rgba(#25064C, 1) 0%, rgba(rgb(2, 2, 2), 1) 50%);
+$footer-gradient: radial-gradient(circle at 30% 30%, #131313 0%, #030303 65%);
+
+$primary-purple-light: #490049;
+$primary-purple: #25064C;
+$primary-pink: #FF0099;
+$primary-navy: #1d093d;
+$primary-light-gray: #ccc;
+$primary-gray: rgb(121, 116, 116);
+$primary-dark-gray: #0f0f0f;
+$nav-background-color: #0f0f0f;
+
+$thumbnail-height: 24rem;

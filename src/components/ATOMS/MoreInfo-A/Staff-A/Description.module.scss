@@ -1,0 +1,25 @@
+.Description {
+  display: block;
+  font-weight: 300;
+
+  &__Character {
+    font-size: 2rem;
+    margin: 1rem 0;
+    height: 2em;
+  }
+  
+  &__Department {
+    font-size: 1.6rem;
+    height: 2em;
+  }
+
+  &__Job {
+    font-size: 2rem;
+    margin: 1rem 1rem 0;
+  }
+  
+  &__Country {
+    font-size: 2rem;
+    margin: 1rem 1rem 0;    
+  }
+}

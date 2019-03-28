@@ -1,0 +1,102 @@
+@import '../../../styles/variables';
+
+.Carousel {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5rem;
+  
+  &__Info {
+    white-space: nowrap;
+    width: 102%;
+    height: calc(100vh - 8rem);
+    transition: all 500ms ease-in-out; // For slide transition
+
+    @media only screen and (max-width: 75em) {
+      height: 85vh;
+    }
+
+    @media only screen and (max-width: 68.75em) {
+      height: 80vh;
+    }
+    
+    @media only screen and (max-width: 59.375em) {
+      height: 70vh;
+    }
+    
+    @media only screen and (max-width: 53.125em) {
+      height: 55vh;
+    }
+    
+    @media only screen and (max-width: 40.625em) {
+      height: 40vh;
+    }
+  }
+
+  &__Dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    background-color: rgba(255,255,255, .1);
+    border-radius: 100px;
+    transition: all 200ms ease-in-out;
+  
+    & > *:not(:last-child) {
+      margin-right: 0.75rem;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .3);
+    }
+
+    @media only screen and (max-width: 56.25em) {
+      display: none;
+    }
+  }
+    
+  &__Arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 200ms ease-out;   
+
+    @media only screen and (max-width: 62.5em) {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    &_left { 
+      left: 2%; 
+      
+      &:hover {
+        transform: translate(-.25rem, -50%);
+        filter: drop-shadow(.75rem .75rem .7rem rgba(0,0,0,.5)) brightness(1.5);
+      }
+    }
+
+    &_right{
+      right: 2%; 
+
+      &:hover {
+        transform: translate(.25rem, -50%);
+        filter: drop-shadow(-.75rem .75rem .7rem rgba(0,0,0,.5)) brightness(1.5);
+      }
+    }
+  }
+
+  &:hover &__Arrows {
+    visibility: visible;
+    opacity: 1;
+  }
+}

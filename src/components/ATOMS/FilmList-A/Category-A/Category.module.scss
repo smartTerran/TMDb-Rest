@@ -1,0 +1,46 @@
+@import '../../../../styles/variables';
+
+.Category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  width: 100%;
+  padding: $filmList-padding-vert $filmList-padding-side;
+  margin-bottom: 2rem;
+
+  &::before, 
+  &::after {
+    display: block;
+    content: '';
+    border: 0;
+    height: 1.15px;
+    width: 100%; 
+  }
+
+  &::before {
+    margin-right: 3rem;
+    background-image: linear-gradient(to left, #fff, $primary-gray, $primary-dark-gray, transparent);
+  }
+  
+  &::after {
+    margin-left: 3rem;
+    background-image: linear-gradient(to right, #fff, $primary-gray, $primary-dark-gray, transparent);
+  }
+
+  &__Text {
+    display: block;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    margin-left: 1.5rem;
+    letter-spacing: 1.5rem;
+
+    @media only screen and (max-width: 34.375em) {
+      white-space: initial;
+    }
+  }
+
+}

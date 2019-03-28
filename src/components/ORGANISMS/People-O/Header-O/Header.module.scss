@@ -1,0 +1,68 @@
+@import '../../../../styles/variables';
+
+.Header {
+  display: block;
+  position: relative;
+  height: calc(100vh - 8rem);
+
+  &__Person {
+    position: absolute;
+    bottom: 11rem;
+    left: 11rem;
+    display: flex;
+    
+    & > *:first-child {
+      z-index: 1;
+    }
+  }
+
+  &__Info {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    font-size: 1.9rem;
+    height: inherit;
+    background-color: rgba(0,0,0, .7);
+    padding: 1rem 2rem 1rem 4rem;
+    z-index: 0;
+    margin-left: -2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    box-shadow: -1rem 1rem 2rem rgba(0, 0, 0, .5);
+  }
+
+  &__Name {
+    position: relative;
+  }
+
+  &__Birth {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__Birthplace {
+    display: block;
+    margin: 1rem 0;
+  }
+  
+  &__Birthday {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  &__Job {
+    display: flex;
+    margin: 1rem 0;
+  }
+  
+  &__Gender {
+    display: block;
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border-right: 1px solid $filter-font-color;
+  }
+  
+  &__Department {
+    display: block;
+  }
+}

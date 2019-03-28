@@ -1,0 +1,21 @@
+.Sidedrawer {
+  display: none;
+  
+  @media only screen and (max-width: 50em) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 200ms ease-out;
+    
+    &_open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import '../../../../styles/variables';
+
+.Biography {
+  display: block;
+  margin: 5rem 0;
+
+  &__Header {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+
+    &::after {
+      display: block;
+      content: '';
+      border: 0;
+      height: 1.15px;
+      width: 100%; 
+    }
+    
+    &::after {
+      margin-left: 2rem;
+      background-image: linear-gradient(to right, #fff, $primary-gray, $primary-dark-gray, transparent);
+    }
+  }
+
+  &__Text {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    font-weight: 300;
+  }
+}

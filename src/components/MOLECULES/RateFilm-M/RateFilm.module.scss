@@ -1,0 +1,38 @@
+.RateFilm {
+  display: inline-block;
+  position: relative;
+  margin: 1rem 0;
+
+  &:hover &__AveRating {
+    visibility: 0;
+    opacity: 0;
+  }
+
+  &:hover &__UserRating {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  &__UserRating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__HeartOverlap {
+    position: relative;
+    width: 2.2rem; // To match average heart ratings
+    height: 2rem;
+  }
+
+  &__UserHeart {
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;    
+  }
+}

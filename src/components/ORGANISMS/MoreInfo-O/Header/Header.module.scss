@@ -1,0 +1,107 @@
+@import '../../../../styles/variables';
+
+.Header {
+  position: relative;
+  display: flex;
+  height: 75vh;
+  width: 100%;
+  overflow: hidden;
+
+  @media only screen and (max-width: 68.75em) {
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  &__SideDrawer {
+    display: flex; 
+    flex-direction: column;
+    height: 100%;
+    max-width: 25%;
+    width: 50rem;
+    transition: all 75ms ease-out;
+    backface-visibility: hidden;
+    opacity: 1;
+    
+    @media only screen and (max-width: 68.75em) {
+      flex-direction: row;
+      width: 100%;
+      max-width: 100%;
+      height: 50%;
+      transition: all 100ms ease-out;
+    }
+
+    @media only screen and (max-width: 43.75em) {
+      height: 40%;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      flex-direction: column;
+      height: 90%;
+    }
+    
+    &_shrink { 
+      transform: translateX(100%); 
+      width: 0;
+      visibility: hidden;
+      opacity: 0;
+
+      @media only screen and (max-width: 68.75em) {
+        transform: translateX(0) translateY(-100%);
+        width: 100%;
+        height: 0;
+      }
+    }
+  }
+  
+  &:hover &__SideDrawerToggle {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__Share {
+    display: block;
+    position: absolute;
+    z-index: 200;
+    right: 1rem;
+    top: 5.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    backface-visibility: hidden;
+    transition: all 150ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.3);
+    }
+  }
+
+  &__SideDrawerToggle {
+    position: absolute;
+    z-index: 100;
+    right: 1rem;
+    top: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    background-color: $primary-gray;
+    transition: all 300ms ease-in-out 200ms,
+                background-color 300ms ease-in-out,
+                transform 400ms ease-out;
+    cursor: pointer;
+
+    @media only screen and (max-width: 68.75em) {
+      visibility: visible;
+      opacity: 1;
+      width: 3.5rem;
+      height: 3.5rem;
+      top: initial;
+      right: initial;
+      bottom: .5rem;
+      left: 1rem;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}

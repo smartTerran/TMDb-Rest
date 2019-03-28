@@ -1,0 +1,27 @@
+.NavItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 300ms ease-out;
+
+  
+  @media only screen and (max-width: 50em) {
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  &_open {
+    @media only screen and (max-width: 50em) {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(-50%, 50%); 
+      bottom: 50%;
+    }    
+  }
+}

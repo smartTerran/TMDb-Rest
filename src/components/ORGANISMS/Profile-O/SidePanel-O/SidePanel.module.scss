@@ -1,0 +1,53 @@
+@import '../../../../styles/variables';
+
+.SidePanel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 7.5rem 0;
+  border-right: 4px solid $nav-background-color;
+  width: 100%;
+  height: 100%;
+  
+  background-image: linear-gradient(-45deg, #23D5AB 14%, rgb(107, 18, 52), $primary-purple, #EE7752);
+	background-size: 300% 300%;
+  animation: Gradient 15s ease infinite;
+  
+  @media only screen and (max-width: 50em) {
+    padding: 2rem 0;
+    border-bottom: 4px solid $nav-background-color;
+  }
+
+  &__Group {    
+    position: sticky;
+    top: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > *:first-child {
+      margin-bottom: 5rem;
+    }
+
+    @media only screen and (max-width: 50em) {
+      & > *:first-child {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 25%
+	}
+	50% {
+		background-position: 100% 20%
+	}
+	100% {
+		background-position: 0% 25%
+	}
+}

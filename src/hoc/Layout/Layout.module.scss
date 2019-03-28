@@ -1,0 +1,64 @@
+@import '../../styles/variables';
+
+.Layout {
+  background-color: $nav-background-color;
+  position: relative;
+  
+  &::before {
+    content: '';
+    z-index: 1000;
+    position: fixed;
+    background-color: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease;
+  }
+
+  &_open {
+    @media only screen and (max-width: 50em) {
+      &::before {
+        content: '';
+        display: block;
+        background-color: rgba(0, 0, 0, .9);
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  
+  &__Main { 
+    position: relative;
+    min-height: $layout-min-height;
+    height: 100%;
+    background-image: $layout-main-gradient;
+    margin: 0 auto 62rem;
+
+    @media only screen and (max-width: 37.5em) {
+      margin: 0 auto 65rem;
+    }
+    
+    @media only screen and (max-width: 18.75em) {
+      margin: 0 auto 73rem;
+    }
+  }
+
+  &__Message {
+    position: fixed;
+    top: 5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 50000;
+  }
+}

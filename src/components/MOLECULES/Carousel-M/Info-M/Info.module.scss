@@ -1,0 +1,83 @@
+.Info {
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    position: relative;  
+    text-transform: uppercase;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+  }
+  
+  &:hover &__Img {
+    transform: scale(1.01);
+    filter: contrast(1.05) brightness(.8);
+  }
+
+  &__Text {
+    position: absolute;
+    bottom: 10rem;
+    left: 10rem;
+    color: #fff;
+    background-image: 
+    linear-gradient( to left top, 
+      rgba(0,0,0,0), rgba(0,0,0,0) 1%, 
+      rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.6),
+      rgba(0,0,0,0) 95%),
+    linear-gradient( to top right, 
+      rgba(0,0,0,0), rgba(0,0,0,0) 1%, 
+      rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.6),
+      rgba(0,0,0,0) 95%);
+    padding: 2rem 4rem;
+    max-width: 60%;
+    white-space: pre-wrap;
+
+    @media only screen and (max-width: 56.25em) {
+      bottom: 5rem;
+    }
+
+    @media only screen and (max-width: 43.75em) {
+      right: 10rem;
+      max-width: 100%;
+    }
+    
+    @media only screen and (max-width: 37.5em) {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 3rem 4rem;
+      text-align: center;
+    }
+
+    & > *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__Rating {
+    display: flex;
+    align-items: flex-end;
+
+    @media only screen and (max-width: 37.5em) {
+      & > *:first-child {
+        margin-left: auto;
+      }
+
+      & > *:last-child {
+        margin-right: auto;
+      }
+    }
+
+    & > *:first-child {
+      padding-right: 1rem;
+      margin-right: 1rem;
+      border-right: 2px solid #fff;
+    }
+    
+    & > *:last-child {
+      margin-left: 1.5rem;
+    }
+  }
+
+}

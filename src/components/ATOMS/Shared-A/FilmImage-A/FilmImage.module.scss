@@ -1,0 +1,38 @@
+.FilmImage {
+  &__Carousel {
+    display: block;
+    object-fit: cover;
+    object-position: 50% 35%;
+    height: 100%;
+    width: 100%;
+    transition: all 200ms ease-out;  
+  }
+
+  &__Thumbnail {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    @media only screen and (max-width: 37.5em) {
+      width: 15rem;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  &__Avatar {
+    display: block;
+    background-color: #556080;
+    height: 10rem;
+    width: 10rem;
+    padding: .5rem;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  &__Person {
+    display: block;
+    border-radius: 2rem;
+    box-shadow: -1rem 1rem 3em rgba(0, 0, 0, .5);
+  }
+}

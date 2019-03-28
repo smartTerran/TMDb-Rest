@@ -1,0 +1,35 @@
+.SideDrawerToggle {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  clip-path: circle(50%);
+  
+  @media only screen and (max-width: 68.75em) {
+    transform: rotateZ(-90deg);
+  }
+    
+  &:hover {
+    transform: scale(1.05);
+    
+    @media only screen and (max-width: 68.75em) {
+      transform: scale(1.05) rotateZ(-90deg);
+    }
+  }
+
+  &_shrink {
+    transform: rotateZ(180deg);
+
+    @media only screen and (max-width: 68.75em) {
+      transform: rotateZ(90deg) translate(.5rem, 50%);
+      left: 50% !important;
+    }
+
+    &:hover {
+      transform: scale(1.05) rotateZ(180deg);
+
+      @media only screen and (max-width: 68.75em) {
+        transform: scale(1.05) rotateZ(90deg) translate(.5rem, 50%);
+      }
+    }
+  }
+}

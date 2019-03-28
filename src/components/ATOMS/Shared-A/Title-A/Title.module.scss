@@ -1,0 +1,42 @@
+.Title {
+  &__Carousel {
+    font-size: 5rem;
+    font-weight: 300;
+
+    @media only screen and (max-width: 53.125em) {
+      font-size: 4rem;  
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      font-size: 4.3rem;
+    }
+  }
+
+  &__Thumbnail {
+    display: inline;
+    font-weight: 700;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  &__Search {
+    display: block;
+    font-size: 5rem;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__Profile {
+    display: block;
+    font-size: 3rem;
+    font-weight: 300;
+  }
+
+  &__Work {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+}

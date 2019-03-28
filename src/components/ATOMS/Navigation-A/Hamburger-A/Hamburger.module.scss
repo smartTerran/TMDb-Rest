@@ -1,0 +1,72 @@
+@import '../../../../styles/variables';
+
+.Hamburger {
+  width: 6rem;
+  height: 3.5rem;
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+  z-index: 1000;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  display: none;
+
+  @media only screen and (max-width: 50em) {
+    display: block;
+    grid-row: 1 / 2;
+    grid-column: 2 / -1;
+    justify-self: end;
+    z-index: 10000;
+  }
+    
+  span {
+    display: block;
+    position: absolute;
+    height: .8rem;
+    width: 100%;
+    background: $primary-pink;
+    border-radius: .9rem;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0px;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 1.5rem;
+    }
+
+    &:nth-child(4) {
+      top: 3rem;
+    }
+  }
+
+  &_open {
+    span {
+      &:nth-child(1) {
+        top: 1.5rem;
+        width: 0%;
+        left: 50%;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(4) {
+        top: 1.5rem;
+        width: 0%;
+        left: 50%;
+      }
+    }
+  }
+}

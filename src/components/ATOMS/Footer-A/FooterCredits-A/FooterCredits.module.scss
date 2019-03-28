@@ -1,0 +1,14 @@
+.FooterCredits {
+  font-size: 1.4rem;
+  padding: .2rem;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 300ms ease-out;
+    
+    &:hover {
+      color: #fff;
+    }
+  }
+}

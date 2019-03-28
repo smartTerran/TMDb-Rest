@@ -1,0 +1,10 @@
+.FooterNavItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & > *:not(:last-child) {
+    margin-right: 4rem;
+  }
+}

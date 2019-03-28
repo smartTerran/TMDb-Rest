@@ -1,0 +1,96 @@
+@import '../../../../styles/variables';
+
+.Thumbnail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  width: 100%;
+  
+  &__Item {
+    display: inline-block;
+    min-width: 14rem;
+    width: auto;
+    height: $thumbnail-height;
+    position: relative;
+    transition: all 200ms ease-out;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    box-shadow: -1.5rem 1rem 2.5rem rgba(#333, .5);
+    cursor: pointer;
+    overflow: hidden;
+
+    @media only screen and (max-width: 50em) {
+      min-width: 19rem;
+      height: auto;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      min-width: initial;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      z-index: 5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: all 300ms ease-out;
+      background-image: linear-gradient(
+        to bottom right,
+        rgba(0,0,0,.1) 15%,
+        rgba(0,0,0,.8) 80%
+      );
+    }
+
+    &:hover {
+      box-shadow: 
+        -1rem 1rem 2rem rgba(0, 0, 0, .5),
+        .25rem .25rem 0 rgba($color: #0051ff, $alpha: 1.0),
+        .25rem -.25rem 0 rgba($color: #0051ff, $alpha: 1.0),
+        -.25rem .25rem 0 rgba($color: #0051ff, $alpha: 1.0),
+        -.25rem -.25rem 0 rgba($color: #0051ff, $alpha: 1.0);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    & > *:first-child {
+      transition: all 200ms ease-out;
+    }
+
+    &:hover > *:first-child {
+      transform: scale(1.03);
+    }   
+  }
+
+  &__Item:hover &__Rating {
+    opacity: 1;
+  }
+
+  &__Img {
+    border-radius: .5rem;
+  }
+
+  &__Rating {
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    opacity: 0;
+    transition: opacity 200ms ease-out;    
+
+    & > *:first-child {
+      margin-right: 1rem;
+    }
+  }
+}

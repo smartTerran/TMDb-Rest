@@ -1,0 +1,113 @@
+@import '../../../../styles/variables';
+
+.Dropdown {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  
+  &_discover {
+    background-color: $nav-background-color;
+    border-radius: $filter-border-radius;
+    box-shadow: $filter-box-shadow;
+    transition: all 200ms ease-out 200ms;
+    margin: 0 1rem;  
+    
+    &:hover {
+      border-radius: 0;
+      border-top-left-radius: $filter-border-radius-top-side;
+      border-top-right-radius: $filter-border-radius-top-side;
+      transition: border-top-left-radius 200ms ease-out 0ms,
+                  border-top-right-radius 200ms ease-out 0ms;
+    }
+  }
+  
+  &__List {
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: block;
+    list-style: none;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 200ms ease-out;
+    overflow-y: auto;
+    
+    &_discover {
+      border-bottom-right-radius: $filter-border-radius-top-side;
+      border-bottom-left-radius: $filter-border-radius-top-side;
+      background-color: $primary-gray;
+      max-height: $filter-dropdown-height;
+      
+      &::-webkit-scrollbar {
+        width: 1rem;
+        border-radius: $large-border-radius;
+        background-color: #111;
+      }
+
+      &::-webkit-scrollbar-track {
+        box-shadow: $filter-scrollbar-box-shadow;
+        border-radius: $large-border-radius;
+        background-color: #111;
+      }
+      
+      &::-webkit-scrollbar-thumb
+      {
+        border-radius: $large-border-radius;
+        box-shadow: $filter-scrollbar-box-shadow;
+        background-color: #ccc;
+      }
+    }
+  }
+
+  &:hover &__List {
+    transform: scaleY(1);
+  }
+  
+  &__Header {
+    display: block;
+    font-size: $normal-font-size;
+    width: 100%;
+    height: 100%;
+    transition: all 200ms ease-out;
+    
+    &_discover {
+      line-height: initial;
+      padding: $filter-padding;
+      color: $filter-font-color;
+      border-radius: $filter-border-radius;
+      transition: all 200ms ease-out 200ms;
+    }
+  }
+
+  &:hover &__Header {    
+    &_discover {
+      background-color: $primary-dark-gray;
+      border-radius: 0;
+      border-top-left-radius: $filter-border-radius-top-side;
+      border-top-right-radius: $filter-border-radius-top-side;
+      transition: border-top-left-radius 200ms ease-out 0ms,
+                  border-top-right-radius 200ms ease-out 0ms;
+    }
+  }
+  
+  &__Item {
+    display: block;
+    font-size: $normal-font-size;
+    white-space: nowrap;
+    transition: all 100ms ease-out;
+    width: 100%;
+    cursor: pointer;
+    
+    &_discover {
+      padding: $filter-padding;
+      color: $primary-dark-gray;
+
+      &:hover {
+        background-color: $primary-light-gray;
+      }
+    }
+  }
+}

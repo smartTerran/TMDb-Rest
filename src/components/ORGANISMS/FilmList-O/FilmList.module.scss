@@ -1,0 +1,33 @@
+@import '../../../styles/variables';
+
+.FilmList {  
+  max-width: $max-width;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: $filmList-padding-vert $filmList-padding-side;
+  
+  &__List {
+    display: grid;
+    width: 100%;
+    grid-gap: 4rem;
+    justify-content: center;
+    align-content: center;
+    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 16rem));
+    grid-auto-rows: min-content;
+
+    @media only screen and (max-width: 50em) {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      grid-gap: .5rem;
+    }
+
+    @media only screen and (max-width: 18.75em) {
+      grid-gap: 0;
+    }
+  }
+}

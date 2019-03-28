@@ -1,0 +1,39 @@
+.slick-arrow {
+  display: block;
+  z-index: 5;    
+}
+
+.slick-prev {
+  left: -7.5rem !important;
+}
+
+.slick-next {
+  right: -7.5rem !important;
+}
+
+.slick-dots {
+  bottom: -4rem !important;
+
+  &:not(.slick-active) {
+    button {
+      &::before {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.slick-active {  
+  button {
+    &::before {
+      color: white !important;
+    }
+  }
+}
+
+.slick-slide {
+  text-align: center !important;
+}
+
+.slick-list {
+}

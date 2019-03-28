@@ -1,0 +1,60 @@
+.Share {
+  display: block;
+  position: fixed;
+  top: 3%;
+  right: 1rem;
+  z-index: 1000;
+
+  @media only screen and (max-width: 68.75em) {
+    z-index: 20000;
+  }
+  
+  &__Link {
+    display: block;
+    margin: .5rem 0;
+  }
+  
+  &__Icon {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  &__Group {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(150%);
+    height: 0;
+    transition: all 200ms ease-out;
+    backface-visibility: hidden;
+    
+    &_open {
+      transform: translateX(0%);
+      height: 100%;
+    }
+  }
+  
+  &__Toggle {
+    display: block;
+    cursor: pointer;
+    transform: rotateY(180deg);
+    transition: all 200ms ease-out;
+    perspective: 20rem;
+    margin-bottom: 1rem;
+
+    @media only screen and (max-width: 68.75em) {
+      background-color: #ccc;
+      border-radius: 50%;
+      
+      & > * {
+        padding: .7rem;
+        filter: brightness(0);
+      }
+    }
+
+    &_open {
+      display: block;
+      transform: rotateY(0);
+    }
+  }
+}

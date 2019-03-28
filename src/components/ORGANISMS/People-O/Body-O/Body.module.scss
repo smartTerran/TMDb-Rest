@@ -1,0 +1,9 @@
+@import '../../../../styles/variables';
+
+.Body {
+  display: block;
+  padding: 5rem 0;
+  margin: 0 auto;
+
+  max-width: $max-width;
+}

@@ -1,0 +1,219 @@
+@import '../../../../styles/variables';
+
+.NavItem {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  z-index: 1;
+  text-align: center;
+  margin: 0 2rem;
+  transition: all 200ms ease-out;
+  backface-visibility: hidden;
+  
+  &:hover {
+    filter: brightness(1.5) drop-shadow(0 .25rem 1.2rem rgba($primary-pink, 1));
+  }
+
+  @media only screen and (max-width: 50em) {
+    margin: 2rem 0;
+    font-weight: 500;
+    font-size: 6.5rem;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+  }
+
+  &__Img {
+    display: block;
+    width: 3.5rem;
+    height: 3.5rem;
+
+    @media only screen and (max-width: 50em) {
+      height: 10rem;
+      width: 10rem;
+    }
+  }
+  
+  &__Link {
+    &,
+    &:link,
+    &:visited {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      width: 100%;
+      backface-visibility: hidden;
+    }
+  }
+  
+  &_active {
+    position: relative;
+    filter: drop-shadow(0 .25rem 1.2rem rgba($primary-pink, 1));
+  }
+}
+
+.NavItemAuth {
+  height: $navbar-height;
+  position: relative;
+  display: block;
+  font-size: 2.25rem;
+  z-index: 1;
+  text-align: center;
+  margin: 0 2rem;
+  transition: all 200ms ease-out;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 50em) {
+    margin: 2rem 0;
+    font-weight: 500;
+    font-size: 6.5rem;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+  }
+  
+  &:hover {
+    filter: brightness(1.1) 
+            drop-shadow(0 .1rem 1.2rem rgba($primary-pink, .5)) 
+            drop-shadow(0 .1rem 1.2rem rgba($primary-pink, .5));
+  }
+
+  &__Text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding-bottom: .3rem;
+    
+    @media only screen and (max-width: 50em) {
+      font-weight: 500;
+    }
+  }
+  
+  &__AuthLink {
+    transition: all 200ms ease-out;
+    backface-visibility: hidden;
+
+    &,
+    &:link,
+    &:visited {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background-color: $primary-light-gray;
+      color: black;
+      width: 3.6rem;
+      height: 3.6rem;
+      font-weight: 700;
+      border-radius: 50%;
+      transition: all 200ms ease-out;
+      
+      @media only screen and (max-width: 50em) {
+        color: inherit;
+        background-color: transparent;
+      }
+    }
+  } 
+
+  &__Dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    opacity: 0;
+    height: 0.1;
+    visibility: hidden;
+    transform: scaleY(0);
+    transition: all 200ms ease-out;
+    transform-origin: top;
+    background-color: $primary-gray;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+    @media only screen and (max-width: 50em) {
+      display: none;
+    }
+
+    & > *:last-child {
+      border-bottom-right-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+    }
+
+    &::before {
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      opacity: 0;
+      height: 1rem;
+      width: 3.5rem;
+      content: '';
+      background-color: $primary-gray;
+      clip-path: polygon(25% 100%, 50% 0, 75% 100%);
+      transition: all 200ms ease-out;
+    }
+  }
+
+  &:hover &__Dropdown {
+    height: auto;
+    opacity: 1;
+    height: 1;
+    visibility: visible;
+    transform: scaleY(1);
+    
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &__DropItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;    
+    background-color: inherit;
+    transition: all 300ms ease-out;
+    
+    &:hover {
+      background-color: $primary-purple-light;
+      color: $primary-light-gray;
+    }
+
+    &,
+    &:link,
+    &:visited {
+      color: black;
+      cursor: pointer;
+    }
+    
+    &_link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      img {
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+
+    &_img {
+      margin-left: 1.5rem;
+      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      transition: all 300ms ease-out;
+      filter: invert(.15);
+    }
+
+    &:hover &_img {
+      filter: invert(.7);
+    }
+  }
+}

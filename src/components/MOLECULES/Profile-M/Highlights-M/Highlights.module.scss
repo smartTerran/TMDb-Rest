@@ -1,0 +1,50 @@
+@import '../../../../styles/variables';
+
+.Highlights {
+  display: flex;
+  align-items: center;
+  padding: 2rem 3rem;
+  border: 2px solid $filter-font-color;
+  border-radius: 1rem;
+  background-color: $primary-dark-gray;
+
+  &__Image {
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    filter: grayscale(1);
+    padding: 1rem;
+  }
+  
+  &__ImageWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: $filter-font-color;
+    margin-right: 1rem;
+  }
+
+  &__Name {
+    display: block;
+    font-size: 2.1rem;
+    font-weight: 300;
+  }
+
+  &__Count {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 500;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    &_favorite {
+      top: 46%;
+      left: 45%;
+    }
+  }
+}

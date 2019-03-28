@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.TV {
+  &__Body {
+    padding: 5rem 0;
+    margin: 0 auto;
+    width: $max-width;
+    max-width: 90%;
+  }
+}

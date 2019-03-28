@@ -1,0 +1,10 @@
+.FooterNavItem {
+  list-style: none;
+  display: block;
+
+  &__Link {
+    font-size: 3rem;
+    text-decoration: none;
+    color: inherit;
+  }
+}

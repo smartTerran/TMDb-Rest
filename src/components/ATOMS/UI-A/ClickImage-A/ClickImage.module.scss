@@ -1,0 +1,72 @@
+.ClickImage {
+  display: block;
+  cursor: pointer;
+
+  &__ArrowRound {
+    width: 5rem !important;
+    height: 5rem !important;
+    cursor: pointer !important;
+    
+    @media only screen and (max-width: 56.25em) {
+      width: 6rem !important;
+      height: 6rem !important;
+    }
+    
+    @media only screen and (max-width: 46.88em) {
+      width: 6.5rem !important;
+      height: 6.5rem !important;
+    }
+
+    @media only screen and (max-width: 40.625em) {
+      width: 5.5rem !important;
+      height: 5.5rem !important;
+    }
+  }
+
+  &__GoBack {
+    position: fixed;
+    top: 3rem;
+    left: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    filter: invert(.7) brightness(2);
+    z-index: 1000;
+    transition: all 200ms ease-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @media only screen and (max-width: 68.75em) {
+      z-index: 15000;
+      // filter: invert(.5) brightness(2);
+      filter: none;
+      background-color: #ccc;
+      padding: .5rem;
+      width: 5rem;
+      height: 5rem;
+      top: 2rem;
+      left: 2rem;
+    }
+  }
+
+  &__Bookmark {
+    width: 2rem;
+    height: 2rem;
+    filter: saturate(0) brightness(2.5);
+    cursor: pointer;
+    
+    &:hover {
+      filter: contrast(3) saturate(.8);
+    }
+
+    &_fav {
+      filter: contrast(3) saturate(.8);
+      
+      &:hover {
+        filter: saturate(0) brightness(2.5);
+      }
+    }
+  }
+}

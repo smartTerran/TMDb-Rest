@@ -1,0 +1,32 @@
+@import '../../../../styles/variables';
+
+.Website {
+  font-size: 3rem;
+  font-weight: 300;
+  width: 100%;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid $primary-gray;
+ 
+  @media only screen and (max-width: 68.75em) {
+    font-size: 3.5rem;
+  }
+
+  &__Name,
+  &__Name:link,
+  &__Name:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    transition: all 200ms ease-out;
+    backface-visibility: hidden;
+  }
+
+  &__Name:hover {
+    transform: translateY(-.1rem);
+    color: $primary-gray;
+  }
+
+  &__Name:active {
+    transform: translateY(.1rem);
+  }
+}

@@ -1,0 +1,16 @@
+@import '../../../../styles/variables';
+
+.Filters {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  grid-gap: 2rem;
+  max-width: $max-width;
+  width: 100%;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 5rem;
+  z-index: 20;
+}
